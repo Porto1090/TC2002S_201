@@ -33,3 +33,47 @@
 7. **Interfaz en VSCode**
    - Finalmente, en VSCode se desplegó una pestaña que muestra el saludo personalizado con el nombre proporcionado en el cuerpo de la solicitud, lo que se puede ver en el Run Commander de la interfaz.
    ![Respuesta de la API](public/firstfunctionapi.png)
+
+### Documentación - Avance 22 de Octubre
+
+1. **Despliegue en Azure**
+   - Desplegamos la Function App en Azure, lo que nos permitió obtener una URL para acceder a la función.
+   ![Página deploy de Azure](public/deploy-functionapi.png)
+
+
+   - La URL generada fue la función firstfunctionapi donde la master host key URL es:
+   - `https://eduardo-porto.azurewebsites.net/api/firstfunctionapi?`
+   ![UrlDeployedAzure](public/deployed-url.png)
+
+2. **Utilizar completionAPI**
+   - Creamos una nueva función llamada `completionApi` que utiliza la API de OpenAI para que te conteste un prompt.
+   - Si contamos con una API Key válida, podemos hacer uso de la función para obtener una respuesta de la API.
+   - Por medio de un req.body en formato:
+   ```json
+   {  
+      "model": "gpt-3.5-turbo", 
+      "prompt": "Dame los primeros 10 números de la serie de Fibonacci", 
+      "max_tokens": 100, 
+      "temperature": 1 
+   }
+   ``` 
+   - La API responderá con los primeros 10 números de la serie de Fibonacci.
+   ![Respuesta de la API](public/completionapi.png)
+
+3. **Utilizar imageAPI**
+   - Creamos una nueva función llamada `imageApi` que utiliza la API de OpenAI para generar una imagen.
+   - Si contamos con una API Key válida, podemos hacer uso de la función para obtener una imagen de la API.
+   - Ya que no está aún desplagada en Azure, debemos usar un consumidor de API como ThunderClient para probarla.
+   - Por medio de un req.body en formato:
+   ```json
+   {  
+      "prompt": "Un paisaje de una noche estrellada"
+   }
+   ``` 
+   - La API responderá con el url de una imagen siguiendo el prompt de una noche estrellada.
+   ![Respuesta de la API](public/imageapi.png)
+
+
+> [!NOTE]
+> Por temas de configuración estuve más de lo previsto en la implementación, una vez que ya había acabado todo, la llave del profesor se había eliminado, por lo que no pude consumirla y no tengo evidencia de que mande un resultado, pero si se puede ver que la función está bien implementada y que se puede consumir.
+
