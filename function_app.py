@@ -2,11 +2,11 @@ import azure.functions as func
 import logging
 from openai import OpenAI
 
-secret_key = 'key goes here'
+secret_key = 'key_profe'
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@app.route(route="firstfunctionapi")
-def firstfunctionapi(req: func.HttpRequest) -> func.HttpResponse:
+@app.route(route="firstfunctionAPI")
+def firstfunctionAPI(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     name = req.params.get('name')

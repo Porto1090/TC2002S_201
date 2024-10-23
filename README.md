@@ -41,7 +41,7 @@
    ![Página deploy de Azure](public/deploy-functionapi.png)
 
 
-   - La URL generada fue la función firstfunctionapi donde la master host key URL es:
+   - La URL generada fue la función firstfunctionAPI donde la master host key URL es:
    - `https://eduardo-porto.azurewebsites.net/api/firstfunctionapi?`
    ![UrlDeployedAzure](public/deployed-url.png)
 
@@ -58,7 +58,7 @@
    }
    ``` 
    - La API responderá con los primeros 10 números de la serie de Fibonacci.
-   ![Respuesta de la API](public/completionapi.png)
+   ![Respuesta de la API](public/completionapi-response.png)
 
 3. **Utilizar imageAPI**
    - Creamos una nueva función llamada `imageApi` que utiliza la API de OpenAI para generar una imagen.
@@ -71,9 +71,13 @@
    }
    ``` 
    - La API responderá con el url de una imagen siguiendo el prompt de una noche estrellada.
-   ![Respuesta de la API](public/imageapi.png)
+   - La url de la imagen generada es:
+   [Imagen generada con dall-e-3](https://oaidalleapiprodscus.blob.core.windows.net/private/org-lmMuYnxJeKRH6AsIbw2ZoknU/user-etKXkieg8P0nAddtMrUKGJA6/img-z5wXwGL43bpicHF4RyTQ0bcg.png?st=2024-10-22T22%3A38%3A18Z&se=2024-10-23T00%3A38%3A18Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-10-22T18%3A47%3A31Z&ske=2024-10-23T18%3A47%3A31Z&sks=b&skv=2024-08-04&sig=%2BsY8KfguUPJjH7Klc9YHGIqTvM1usH5ydunYp8twhpE%3D)
 
+   ![Respuesta de la API](public/imageapi-response.png)
+   ![Imagen generada con dall-e-3](public/imageapi-imagen.png)
 
-> [!NOTE]
-> Por temas de configuración estuve más de lo previsto en la implementación, una vez que ya había acabado todo, la llave del profesor se había eliminado, por lo que no pude consumirla y no tengo evidencia de que mande un resultado, pero si se puede ver que la función está bien implementada y que se puede consumir.
+4. **Despliegue en Azure**
+   - Desplegamos todas las funciones en Azure, lo que nos permitió obtener una URL para acceder a las funciones.
+   ![Página deploy de Azure](public/deploy-functionapi-2.png)
 
